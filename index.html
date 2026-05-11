@@ -97,7 +97,7 @@
   }
   @keyframes border-pulse {
     0%, 100% { box-shadow: 0 0 10px rgba(255,180,220,0.2); }
-    50%       { box-shadow: 0 0 25px rgba(255,180,220,0.5); }
+    50%        { box-shadow: 0 0 25px rgba(255,180,220,0.5); }
   }
 
   .music-note {
@@ -289,6 +289,22 @@
     margin-bottom: 0.3rem;
   }
   .option-card.selected .option-theme-name { color: #fff; }
+  
+  /* ADDED: Styles for the location lists under the theme names */
+  .option-details {
+    font-size: 0.75rem;
+    color: rgba(255,200,230,0.6);
+    margin-top: 0.8rem;
+    line-height: 1.5;
+    transition: color 0.3s;
+  }
+  .option-details p {
+    margin-bottom: 0.2rem;
+  }
+  .option-card.selected .option-details {
+    color: rgba(255,230,244,0.95);
+  }
+
   .option-checkmark {
     position: absolute; top: 10px; right: 12px;
     font-size: 1rem; opacity: 0;
@@ -367,7 +383,6 @@
   <div class="dot" id="d3"></div>
 </div>
 
-<!-- PAGE 1 -->
 <div class="page active" id="page1">
   <div class="stars" id="stars"></div>
   <div class="hearts-float" id="hearts"></div>
@@ -378,7 +393,6 @@
   <button class="continue-btn" onclick="goTo(2)">✦ Click Here to Continue ✦</button>
 </div>
 
-<!-- PAGE 2 -->
 <div class="page" id="page2">
   <div class="stars" id="stars2"></div>
   <h1 id="bdayTitle" onclick="revealSurprise()">HAPPY BIRTHDAY SHAZLIN! 🎂</h1>
@@ -403,42 +417,48 @@ Thank you for existing. Thank you for sticking by me until today and thank you f
   <button class="corner-btn" onclick="goTo(3)">✦ Continue ✦</button>
 </div>
 
-<!-- PAGE 3 -->
 <div class="page" id="page3">
   <h2>🥳 Pick A Date!</h2>
   <p class="subtitle">Pilih bila you free hehe 🌹</p>
 
-  <!-- OPTIONS A / B / C -->
   <p class="options-label">✦ Choose Your Vibe ✦</p>
   <div class="options-grid">
 
-    <!-- OPTION A -->
     <div class="option-card" id="optA" onclick="selectOption('A')">
       <div class="option-checkmark">✓</div>
       <div class="option-badge">A</div>
       <div class="option-theme-icon">❄️</div>
       <div class="option-theme-name">Winter</div>
+      <div class="option-details">
+        <p>- Ice Skating @ Paradigm</p>
+        <p>- Snowland @ Legoland</p>
+      </div>
     </div>
 
-    <!-- OPTION B -->
     <div class="option-card" id="optB" onclick="selectOption('B')">
       <div class="option-checkmark">✓</div>
       <div class="option-badge">B</div>
       <div class="option-theme-icon">🌿</div>
       <div class="option-theme-name">Nature</div>
+      <div class="option-details">
+        <p>- Indoor Zoo @ Mount Austin</p>
+        <p>- Boat Ride @ Sg. Melayu</p>
+      </div>
     </div>
 
-    <!-- OPTION C -->
     <div class="option-card" id="optC" onclick="selectOption('C')">
       <div class="option-checkmark">✓</div>
       <div class="option-badge">C</div>
       <div class="option-theme-icon">🏠</div>
       <div class="option-theme-name">Indoor</div>
+      <div class="option-details">
+        <p>- Escape Room</p>
+        <p>- X Park/Game ON @ Iskandar Puteri/Toppen</p>
+      </div>
     </div>
 
   </div>
 
-  <!-- CALENDAR -->
   <p class="cal-label">✦ Then Pick A Date ✦</p>
   <div class="calendar-wrap">
     <div class="cal-header">
